@@ -1,12 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SendMe - Welcome</title>
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="SendMe — A place to share messages and connect with people.">
+    <title>Welcome to SendMe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="../../../images/logo.png" alt="Banner">
+    <main>
+        <section class="welcome" aria-labelledby="welcome-title">
+            <img
+                class="logo"
+                src="../../../images/logo.png"
+                alt="SendMe"
+            >
+
+            <h1 id="welcome-title">
+                Welcome to <span>SendMe</span>
+            </h1>
+
+            <p class="description">
+                Good conversations start here. Send messages, share a moment,
+                and stay close to the people who matter.
+            </p>
+
+            <a class="start-button" href="../auth/login.html">
+                Start chatting
+                <span class="arrow" aria-hidden="true">→</span>
+            </a>
+        </section>
+    </main>
 </body>
 </html>
