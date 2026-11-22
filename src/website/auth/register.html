@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Create a SendMe account and start connecting.">
+    <title>Create an account · SendMe</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <main>
+        <section class="account-card" aria-labelledby="register-title">
+            <a class="brand" href="../home/index.html" aria-label="SendMe home">
+                <img src="../images/logo.png" alt="">
+                <span>SendMe</span>
+            </a>
+
+            <h1 id="register-title">Create your account</h1>
+            <p class="description">Join SendMe and stay close to the people who matter.</p>
+
+            <form method="post">
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="confirm-password">Confirm password</label>
+                    <input
+                        id="confirm-password"
+                        name="confirm-password"
+                        type="password"
+                        placeholder="Enter your password again"
+                        autocomplete="new-password"
+                        required
+                    >
+                </div>
+
+                <button class="account-button" type="submit">Create account</button>
+            </form>
+
+            <div class="error">
+                
+            </div>
+
+            <p class="account-switch">
+                Already have an account? <a href="login.html">Log in</a>
+            </p>
+            <a class="home-link" href="../home/index.html">Back to home</a>
+        </section>
+    </main>
+</body>
+</html>

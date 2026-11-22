@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Log in to SendMe and continue the conversation.">
+    <title>Log in · SendMe</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <main>
+        <section class="account-card" aria-labelledby="login-title">
+            <a class="brand" href="../home/index.html" aria-label="SendMe home">
+                <img src="../images/logo.png" alt="">
+                <span>SendMe</span>
+            </a>
+
+            <h1 id="login-title">Welcome back</h1>
+            <p class="description">Log in to pick up where you left off.</p>
+
+            <form method="post">
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button class="account-button" type="submit">Log in</button>
+            </form>
+
+            <p class="error">
+                
+            </p>
+
+            <p class="account-switch">
+                New to SendMe? <a href="register.html">Create an account</a>
+            </p>
+            <a class="home-link" href="../home/index.html">Back to home</a>
+        </section>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>
