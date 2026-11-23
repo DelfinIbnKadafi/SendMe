@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from flask import *
 import mysql.connector
 import sys
+from hashlib import sha256
 
 app = Flask(__name__)
 
@@ -22,8 +23,12 @@ except mysql.connector.Error as error:
     db = None
     sys.exit()
 
-cursor = db.cursor()
+cursor = db.cursor(dictionary=True)
 ###############################################
+
+## hash functions
+def hashing(input):
+    return sha256(input.encode('utf-8')).hexdigest()
 
 # auth
 ## Login
@@ -42,7 +47,7 @@ def login():
     if row is None:
         return jsonify({"status": "undefined_user"})
     else:
-        if password != row["password"]:
+        if hashing(password) != row["password"]:
             return jsonify({"status": "password_wrong"})
         else:
             return jsonify({"status": "succes"})
