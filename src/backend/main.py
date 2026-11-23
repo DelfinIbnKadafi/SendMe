@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, jsonify
+from flask import *
 import mysql.connector
+import sys
 
 app = Flask(__name__)
 
@@ -19,12 +20,33 @@ try:
 except mysql.connector.Error as error:
     print(f"MySQL connection failed: {error}")
     db = None
+    sys.exit()
+
+cursor = db.cursor()
 ###############################################
 
 # auth
 ## Login
 @app.post("/login")
 def login():
+
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+
+    # check if username is exist
+    cursor.execute("SELECT * FROM user WHERE email = %s", (email,))
+
+    row = cursor.fetchone()
+
+    if row is None:
+        return jsonify({"status": "undefined_user"})
+    else:
+        if password != row["password"]:
+            return jsonify({"status": "password_wrong"})
+        else:
+            return jsonify({"status": "succes"})
+
     return jsonify({"status": "error"})
 
 
